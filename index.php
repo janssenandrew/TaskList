@@ -8,7 +8,6 @@ require_once('init.php');
 <head>
   <link rel="stylesheet" type="text/css" href="style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="handler.js"></script>
   <title>Task List</title>
 </head>
 
@@ -20,6 +19,8 @@ require_once('init.php');
   </div>
 
   <ul id='container'> </ul>
+
+  <script src="handler.js"></script>
 </body>
 
 </html>

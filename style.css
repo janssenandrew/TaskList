@@ -1,0 +1,8 @@
+.completed {
+    color: blueviolet;
+}
+
+ul {
+    list-style-type: none;
+    width: 20%;
+}

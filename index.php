@@ -12,7 +12,7 @@ require_once('init.php');
   <title>Task List</title>
 </head>
 
-<body style=text-align:center>
+<body style="text-align:center">
   <div style="display:inline-block">
     <h1><span>Task List</span></h1>
     <div style="display: flex" class="input-group mb-3">

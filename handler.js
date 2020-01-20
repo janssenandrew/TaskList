@@ -13,19 +13,16 @@ function init(str) {
     for (var e in str) {
         const num = str[e].id;
         var li = document.createElement('li');
-        var box = document.createElement('input');
-        box.addEventListener("click", () => {
+        li.addEventListener("click", () => {
             update(num);
         });
         var span = document.createElement('span');
         span.innerHTML = str[e].task;
-        box.setAttribute('type', 'checkbox');
         li.classList.add('list-group-item');
         if (str[e].complete)
-            li.classList.add('completed');
+            li.classList.add('disabled');
         li.setAttribute("id", num);
         li.appendChild(span);
-        li.appendChild(box);
         container.appendChild(li);
     }
 }
@@ -46,18 +43,16 @@ function add() {
             let js = JSON.parse(data);
             var container = document.getElementById('container');
             var li = document.createElement('li');
-            var box = document.createElement('input');
-            box.addEventListener("click", () => {
+            li.addEventListener("click", () => {
                 update(js.id)
             });
             var span = document.createElement('span');
             span.innerHTML = js.task;
-            box.setAttribute('type', 'checkbox');
             li.classList.add('list-group-item');
             li.setAttribute("id", js.id);
             li.appendChild(span);
-            li.appendChild(box);
             container.appendChild(li);
+            count();
         });
     }
 }
@@ -73,9 +68,9 @@ function update(num) {
         let ele = document.getElementById(num)
         console.log(data);
         if (data == 'true')
-            ele.classList.add('completed');
+            ele.classList.add('disabled');
         else
-            ele.classList.remove('completed');
+            ele.classList.remove('disabled');
         count()
     })
 }

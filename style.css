@@ -7,9 +7,9 @@ ul {
 ul li {
     position: relative;
     padding: 12px 8px 12px 40px;
+    user-select: none;
 }
 
 li :hover {
     cursor: pointer;
-    user-select: none;
 }

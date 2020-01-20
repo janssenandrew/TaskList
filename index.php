@@ -6,6 +6,7 @@
 
 <head>
   <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="handler.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <title>Task List</title>
 </head>

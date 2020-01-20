@@ -52,6 +52,7 @@ function add() {
             var span = document.createElement('span');
             span.innerHTML = js.task;
             box.setAttribute('type', 'checkbox');
+            li.classList.add('list-group-item');
             li.setAttribute("id", js.id);
             li.appendChild(span);
             li.appendChild(box);
@@ -76,3 +77,10 @@ function update(num) {
             ele.classList.remove('completed');
     })
 }
+
+jQuery.ajax({
+    type: "POST",
+    url: 'api/count.php',
+}).done(function(data) {
+    console.log(data);
+});

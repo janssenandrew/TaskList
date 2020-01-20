@@ -19,6 +19,7 @@ function init(str) {
         var span = document.createElement('span');
         span.innerHTML = str[e].task;
         box.setAttribute('type', 'checkbox');
+        li.classList.add('list-group-item');
         if (str[e].complete)
             li.classList.add('completed');
         li.setAttribute("id", num);

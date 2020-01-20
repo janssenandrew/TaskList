@@ -5,6 +5,7 @@ jQuery.ajax({
     url: 'api/get.php',
 }).done(function(data) {
     init(JSON.parse(data));
+    count();
 });
 
 function init(str) {
@@ -75,12 +76,18 @@ function update(num) {
             ele.classList.add('completed');
         else
             ele.classList.remove('completed');
+        count()
     })
 }
 
-jQuery.ajax({
-    type: "POST",
-    url: 'api/count.php',
-}).done(function(data) {
-    console.log(data);
-});
+function count() {
+    jQuery.ajax({
+        type: "POST",
+        url: 'api/count.php',
+    }).done(function(data) {
+        let json = JSON.parse(data);
+        document.getElementById("total").innerHTML = json[0] + " tasks";
+        document.getElementById("completed").innerHTML = json[1] + " completed";
+        document.getElementById("uncompleted").innerHTML = json[0] - json[1] + " uncompleted";
+    });
+}

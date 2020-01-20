@@ -14,15 +14,20 @@ require_once('init.php');
 
 <body style=text-align:center>
   <div style="display:inline-block">
-    <h1 class='heading'>Task List</h1>
+    <h1><span>Task List</span></h1>
     <div style="display: flex" class="input-group mb-3">
       <input type='text' class="form-control" name='task' id='input' placeholder='Enter a task' />
       <span class="input-group-append">
-        <button id='button' type='submit' name='add' class="btn btn-outline-secondary"> Add </button>
+        <button id='button' type='submit' name='add' class="btn btn-primary btn-outline-secondary"> Add </button>
       </span>
     </div>
+    <div style="display:flex; justify-content: space-between">
+      <span id="total"></span>
+      <span id="completed"></span>
+      <span id="uncompleted"></span>
+    </div>
 
-    <ul class='list-group list-group-flush' id='container'> </ul>
+    <ul class="list-group list-group-flush" id='container'> </ul>
 
     <script src="handler.js"></script>
     <div>

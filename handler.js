@@ -53,3 +53,20 @@ function add() {
         container.appendChild(li);
     });
 }
+
+function update(num) {
+    jQuery.ajax({
+        type: "POST",
+        url: 'update.php',
+        data: {
+            id: num
+        },
+    }).done(function(data) {
+        let ele = document.getElementById(num)
+        console.log(data);
+        if (data == 'true')
+            ele.classList.add('completed');
+        else
+            ele.classList.remove('completed');
+    })
+}
